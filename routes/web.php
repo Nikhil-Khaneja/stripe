@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware'=>'auth'], function (){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/plans', 'PlansController@index')->name('plans.index');
+    Route::get('/plans/{plan}', 'PlansController@show')->name('plans.show');
+});
