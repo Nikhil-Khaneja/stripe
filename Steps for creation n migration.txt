@@ -1,0 +1,19 @@
+1. creation
+
+$ composer  create-project laravel/laravel stripe-demo
+
+ cd stripe-demo
+
+$ composer require "laravel/cashier"
+
+$ composer require laravel/ui --dev
+
+$ php artisan ui bootstrap --auth
+
+$ npm install && npm run dev
+
+2.migrations
+ php artisan vendor:publish
+11
+php artisan make:migration create_subscriptions_table 
+ php artisan make:migration create_plans_table
