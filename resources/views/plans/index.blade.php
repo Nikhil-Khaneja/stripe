@@ -15,7 +15,9 @@
                                         <h5>INR {{ number_format($plan->cost, 2)}}</h5>
                                         <h5>{{ $plan->description }}</h5>
 
-                                        <a href="#" class="btn btn-outline-dark">Choose</a>
+                                        @if(!auth()->user()->subscribedToPlan($plan->stripe_plan, $plan->name))
+                                            <a href="{{ route('plans.show', $plan->slug) }}" class="btn btn-outline-dark">Choose</a>
+                                        @endif
                                     </div>
                                 </li>
                             @endforeach

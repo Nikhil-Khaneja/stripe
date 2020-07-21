@@ -71,7 +71,7 @@
                 </div>
             </div>
         </nav>
-
+        @include('layouts._message')
         <main class="py-4">
             @yield('content')
         </main>
